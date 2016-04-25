@@ -50,7 +50,7 @@ function createImages() {
     var img = image.substring(7);
     var url = config.proxy + 'https:/' + img;
 
-    $('#instagramimages').append('<li><img src="' + url + '"/></li>');
+    $('#instagramimages').append('<li><span class="polaroid"><img src="' + url + '"/></span></li>');
   });
 }
 
