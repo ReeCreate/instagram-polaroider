@@ -46,13 +46,9 @@ function getInstagramFeed() {
 }
 
 function createImages() {
-  var zip = new JSZip();
-  var deferreds = new Array();
-
   $.each(images, function(i, image) {
     var img = image.substring(7);
     var url = config.proxy + 'https:/' + img;
-    var filename = (i + 1) + '.jpg';
 
     $('#instagramimages').append('<li><img src="' + url + '"/></li>');
   });
