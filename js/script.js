@@ -1,6 +1,6 @@
 var config = {
-  username: 'yslbeauty',
-  imageCount: 20,
+  username: 'yslbeauty', // Will be "allinawink" but there are no images on there at the minute!
+  imageCount: 5,
   proxy: ['https://crossorigin.me/']
 };
 
@@ -47,10 +47,12 @@ function getInstagramFeed() {
 
 function createImages() {
   $.each(images, function(i, image) {
-    var img = image.substring(7);
-    var url = config.proxy + 'https:/' + img;
-
-    $('#instagramimages').append('<li><span class="polaroid"><img src="' + url + '"/></span></li>');
+    if(i < config.imageCount)
+    {
+      var img = image.substring(7);
+      var url = config.proxy + 'https:/' + img;
+      $('#instagramimages').append('<li><span class="polaroid img' + i + '"><img src="' + url + '"/></span></li>');
+    }
   });
 }
 
