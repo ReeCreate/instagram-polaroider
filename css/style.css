@@ -1,12 +1,12 @@
 html {
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 body {
   width: 1080px;
   height: 1920px;
   background: url('../images/background.jpg') no-repeat;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 #instagramimages {
@@ -25,8 +25,12 @@ body {
 #instagramimages li .polaroid.img0 {
     -webkit-transform: rotate(7deg);
     -moz-transform: rotate(7deg);
-    top: 657px;
-    left: 206px;
+    top: 634px;
+    left: 174px;
+    padding: 25px 25px 122px 25px;
+    background: white;
+    z-index: 100;
+    box-shadow: 0px 0px 60px 0px #000;
 }
 
 #instagramimages li .polaroid.img0 img {

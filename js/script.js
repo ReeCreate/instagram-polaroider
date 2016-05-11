@@ -1,7 +1,6 @@
 var config = {
-  username: 'yslbeauty', // Will be "allinawink" but there are no images on there at the minute!
-  imageCount: 5,
-  proxy: ['https://crossorigin.me/']
+  username: 'allinawink',
+  imageCount: 5
 };
 
 var images = [];
@@ -18,12 +17,12 @@ function getInstagramFeed() {
     dataType : 'json',
     success : function (json) {
       if (json.query.results === null) {
-        alert('Account not found! Do you think it\'s valid? Please try in few minutes ;)');
+        console.log('Account not found! Do you think it\'s valid? Please try in few minutes ;)');
         return false;
       }
 
       if (json.query.results.json.items === undefined) {
-        alert('Account private or empty!');
+        console.log('Account private or empty!');
         return false;
       }
 
@@ -39,23 +38,34 @@ function getInstagramFeed() {
         createImages();
     },
     error : function(xhr, txt, e) {
-      alert('Something went wrong! Probably too many requests. Please try in few minutes ;)');
+      console.log('Something went wrong! Probably too many requests. Please try in few minutes ;)');
       return false;
     }
   });
 }
 
 function createImages() {
-  $.each(images, function(i, image) {
-    if(i < config.imageCount)
-    {
-      var img = image.substring(7);
-      var url = config.proxy + 'https:/' + img;
-      $('#instagramimages').append('<li><span class="polaroid img' + i + '"><img src="' + url + '"/></span></li>');
-    }
-  });
+  if(images.length >= config.imageCount)
+  {
+    $('#instagramimages').empty();
+    
+    $.each(images, function(i, image) {
+      if(i < config.imageCount)
+      {
+        var img = image.substring(7);
+        var url = 'https:/' + img;
+        $('#instagramimages').append('<li><span class="polaroid img' + i + '"><img src="' + url + '"/></span></li>');
+        images = [];
+      }
+    });
+  }
 }
 
 $(document).ready(function(){
+  
   getInstagramFeed();
+  
+  window.setInterval(function(){
+    getInstagramFeed();
+  }, 15000);
 })
