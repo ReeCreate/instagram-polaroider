@@ -1,8 +1,12 @@
+html {
+    overflow: hidden;
+}
+
 body {
   width: 1080px;
   height: 1920px;
   background: url('../images/background.jpg') no-repeat;
-  overflow: none;
+  overflow: hidden;
 }
 
 #instagramimages {
