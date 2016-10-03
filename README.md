@@ -15,7 +15,7 @@ Hacktoberfest 2016
 
 This was developed as an internal project at ReeCreate. As part of Hacktoberfest 2016 we have decided to release it as open source and will be tweaking the code to turn it into a more useful general purpose project. Here's what we aim to achieve by the end of the month:
 
-- -Remove all existing branding-
+- ~~Remove all existing branding~~
 - Reimplement some "borrowed" code and release with a proper open source license
 - Remove dependency on scraped JSON at http://rc8.me/rc8polaroid.json and use a proper CORS proxy instead
 - Make the project responsive (originally designed to run at fixed 1080x1920 portrait mode as part of a promo)
