@@ -5,7 +5,7 @@ html {
 body {
   width: 1080px;
   height: 1920px;
-  background: url('../images/background.jpg') no-repeat;
+  background-color: black;
   overflow: hidden;
 }
 
@@ -20,6 +20,9 @@ body {
 #instagramimages li .polaroid {
   display: block;
   position: absolute;
+  box-shadow: 0px 0px 60px 0px #000;
+  padding: 25px 25px 122px 25px;
+  background: white;
 }
 
 #instagramimages li .polaroid.img0 {
@@ -27,10 +30,7 @@ body {
     -moz-transform: rotate(7deg);
     top: 634px;
     left: 174px;
-    padding: 25px 25px 122px 25px;
-    background: white;
     z-index: 100;
-    box-shadow: 0px 0px 60px 0px #000;
 }
 
 #instagramimages li .polaroid.img0 img {
