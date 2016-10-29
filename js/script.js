@@ -29,6 +29,7 @@ function createImages(images) {
       }
     });
   }
+  layoutImages();
 }
 
 function throwError() {
@@ -42,3 +43,37 @@ $(document).ready(function(){
     getInstagramFeed();
   }, refreshInterval);
 })
+
+function layoutImages() {
+  var viewportHeight = document.documentElement.clientHeight;
+  var viewportWidth = document.documentElement.clientWidth;
+  
+  var minImageWidth = Math.round(viewportWidth * config.minimumImageWidthPercent / 100);
+  var maxImageWidth = Math.round(viewportWidth * config.maximumImageWidthPercent / 100);
+
+  var ul = document.getElementById("instagramimages");
+  var items = ul.getElementsByTagName("img");
+  
+  for (var i = 0; i < items.length; ++i) {
+    var imageWidth = getRandomInt(minImageWidth, maxImageWidth);
+    var rotationAngle = getRandomInt(config.minimumImageRotationAngle, config.maximumImageRotationAngle);
+    var paddingSize = Math.round(imageWidth * config.borderSizePercentage / 100);
+
+    items[i].style.width = imageWidth;
+    items[i].parentElement.style.webkitTransform = "rotate(" + rotationAngle + "deg)";
+    items[i].parentElement.style.padding = paddingSize + "px";
+    items[i].parentElement.style.paddingBottom = paddingSize * 4 + "px";
+
+    var spanTopPosition = getRandomInt(20, viewportHeight - items[i].parentElement.clientWidth);
+    var spanLeftPosition = getRandomInt(20, viewportWidth - items[i].parentElement.clientWidth);
+
+    items[i].parentElement.style.top = spanTopPosition + "px";
+    items[i].parentElement.style.left = spanLeftPosition + "px";
+
+    items[i].parentElement.style.zIndex = getRandomInt(0, config.imageCount);
+  }
+}
+
+function getRandomInt(min, max) {
+    return Math.round(Math.random() * (max - min + 1)) + min;
+}

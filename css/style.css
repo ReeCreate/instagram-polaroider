@@ -3,10 +3,7 @@ html {
 }
 
 body {
-  width: 1080px;
-  height: 1920px;
   background-color: black;
-  overflow: hidden;
 }
 
 #instagramimages {
@@ -20,63 +17,6 @@ body {
 #instagramimages li .polaroid {
   display: block;
   position: absolute;
-  box-shadow: 0px 0px 60px 0px #000;
-  padding: 25px 25px 122px 25px;
+  box-shadow: 0px 0px 10px 0px #000;
   background: white;
-}
-
-#instagramimages li .polaroid.img0 {
-    -webkit-transform: rotate(7deg);
-    -moz-transform: rotate(7deg);
-    top: 634px;
-    left: 174px;
-    z-index: 100;
-}
-
-#instagramimages li .polaroid.img0 img {
-    width: 654px;
-}
-
-#instagramimages li .polaroid.img1 {
-    -webkit-transform: rotate(-5deg);
-    -moz-transform: rotate(-5deg);
-    top: 310px;
-    left: 55px;
-}
-
-#instagramimages li .polaroid.img1 img {
-    width: 296px;
-}
-
-#instagramimages li .polaroid.img2 {
-    -webkit-transform: rotate(19deg);
-    -moz-transform: rotate(19deg);
-    top: 326px;
-    left: 655px;
-}
-
-#instagramimages li .polaroid.img2 img {
-    width: 326px;
-}
-
-#instagramimages li .polaroid.img3 {
-    -webkit-transform: rotate(-13deg);
-    -moz-transform: rotate(-13deg);
-    top: 1424px;
-    left: 78px;
-}
-
-#instagramimages li .polaroid.img3 img {
-    width: 331px;
-}
-
-#instagramimages li .polaroid.img4 {
-    -webkit-transform: rotate(29deg);
-    -moz-transform: rotate(29deg);
-    top: 1503px;
-    left: 694px;
-}
-
-#instagramimages li .polaroid.img4 img {
-    width: 295px;  
 }

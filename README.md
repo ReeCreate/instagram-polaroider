@@ -21,5 +21,7 @@ This was developed as an internal project at ReeCreate. As part of Hacktoberfest
 - ~~Reimplement some "borrowed" code and release with a proper open source license~~
 - ~~Remove dependency on scraped JSON at http://rc8.me/rc8polaroid.json~~
 - ~~Make the project more "configurable" (number of pictures, account name, refresh time etc)~~
-- Make the project responsive (originally designed to run at fixed 1080x1920 portrait mode as part of a promo)
-- Randomise picture sizes and layout
+- ~~Make the project responsive (originally designed to run at fixed 1080x1920 portrait mode as part of a promo)~~
+- ~~Randomise picture sizes and layout~~
+
+...and we did! Although the implementation is open to improvements, of course ;)
