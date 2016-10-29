@@ -1,7 +1,7 @@
 var config = {
   username: 'smellygeekboy', // Instagram feed to scrape
   imageCount: 5, // Number of images to display
-  refreshInterval: 15, // How often to refresh the images in seconds
+  refreshInterval: 0, // How often to refresh the images in seconds, set to 0 to never refresh after initial page load
   imageQuality: 'standard_resolution', // Options are standard_resolution, low_resolution or thumbnail
   minimumImageWidthPercent: 10, // Minimum width of the images as a percentage of the viewport size
   maximumImageWidthPercent: 40, // Maximum width of the images as a percentage of the viewport size 
