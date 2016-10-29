@@ -30,3 +30,9 @@ This was developed as an internal project at ReeCreate. As part of Hacktoberfest
 - ~~Randomise picture sizes and layout~~
 
 ...and we did! Although the implementation is open to improvements, of course ;)
+
+Demo
+====
+
+There is now a demo of this project available here: http://reecreate.com/instagram-polaroider/
+Note that the demo is deployed manually so could well be outdated!
