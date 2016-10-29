@@ -25,7 +25,7 @@ function createImages(images) {
     $('#instagramimages').empty();
     $.each(images, function(i, image) {
       if(i < config.imageCount) {
-        $('#instagramimages').append('<li><span class="polaroid img' + i + '"><img src="' + image + '"/></span></li>');
+        $('#instagramimages').append('<li><span class="polaroid img' + i + ' draggable"><img src="' + image + '"/></span></li>');
       }
     });
   }
@@ -39,10 +39,11 @@ function throwError() {
 
 $(document).ready(function(){
   getInstagramFeed();
-  window.setInterval(function(){
-    getInstagramFeed();
-  }, refreshInterval);
-})
+  if(refreshInterval > 0) {
+    window.setInterval(function(){
+      getInstagramFeed();
+    }, refreshInterval);
+  }})
 
 function layoutImages() {
   var viewportHeight = document.documentElement.clientHeight;
@@ -71,7 +72,24 @@ function layoutImages() {
     items[i].parentElement.style.left = spanLeftPosition + "px";
 
     items[i].parentElement.style.zIndex = getRandomInt(0, config.imageCount);
+
+    $(".draggable").draggable();
+    $(".draggable").on('mousedown',(function() {
+      $(this).css('z-index', getHighestZIndex());
+    }));
+
   }
+}
+
+function getHighestZIndex() {
+  var draggables = document.getElementsByClassName("draggable");
+  var highestZIndex = 0;
+  for (var i = 0; i < draggables.length; ++i) {
+    var draggableZIndex = draggables[i].style.zIndex; 
+    if(draggableZIndex > highestZIndex) highestZIndex = draggableZIndex; 
+  }
+
+  return highestZIndex + 1;
 }
 
 function getRandomInt(min, max) {
