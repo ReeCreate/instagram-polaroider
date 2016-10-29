@@ -7,6 +7,11 @@ Uses some code from https://github.com/duplikey/instatake to actually grab the i
 
 "Instagram" and "Polaroid" are registered trademarks of their respective owners.
 
+Configuration
+=============
+
+Settings for the scraper are in js/config.js
+
 Hacktoberfest 2016
 ==================
 
