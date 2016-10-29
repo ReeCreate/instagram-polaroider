@@ -3,7 +3,7 @@ Instagram Polaroider
 
 Grabs a load of images from an Instagram feed and displays them nicely on the page.
 
-Uses some code borrowed from https://github.com/duplikey/instatake to actually grab the images. This project is also licensed under the MIT license.
+Uses some code derived from https://github.com/duplikey/instatake to actually grab the images. This project is also licensed under the MIT license.
 
 "Instagram" and "Polaroid" are registered trademarks of their respective owners.
 
@@ -11,6 +11,11 @@ Configuration
 =============
 
 Settings for the scraper are in js/config.js
+
+Instructions
+============
+
+It probably goes without saying, but this needs to be run on a proper web server. If you just download the files and open index.html in a browser, it more than likely won't work!
 
 Hacktoberfest 2016
 ==================
