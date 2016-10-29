@@ -10,8 +10,7 @@ function getInstagramFeed() {
     dataType : 'json',
     success : function (json) {
       if (json.query.results === null || json.query.results.json.items === undefined) throwError();
-      for (i in json.query.results.json.items)
-        images.push(json.query.results.json.items[i]['images']['standard_resolution']['url']);
+      for (i in json.query.results.json.items) images.push(json.query.results.json.items[i]['images'][config.imageQuality]['url']);
         createImages(images);
     },
     error : function(xhr, txt, e) {
@@ -33,7 +32,7 @@ function createImages(images) {
 }
 
 function throwError() {
-  window.alert('Error: ' + error);
+  window.alert('Error retrieving Instagram feed! Either the account doesn\'t exist or you\'re trying to refresh too often!');
   return false;
 }
 
